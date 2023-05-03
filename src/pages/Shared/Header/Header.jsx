@@ -7,7 +7,7 @@ const Header = () => {
         <div className='flex justify-between items-center mx-24 mt-10'>
             <div className='flex gap-16 items-center'>
                 <div className='flex items-center'>
-                    <img className='w-36' src="logo.png" alt="" />
+                    <img className='w-36' src="/logo.png" alt="" />
                     <h1 className='text-3xl font-bold -m-8'>Chef Looker</h1>
                 </div>
                 <div>
