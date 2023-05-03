@@ -11,11 +11,11 @@ const Header = () => {
                     <h1 className='text-3xl font-bold -m-8'>Chef Looker</h1>
                 </div>
                 <div>
-                    <Link to='/'><button className='mx-5 bg-orange-300 w-24 py-3 rounded text-xl font-semibold text-white'>Home</button></Link>
-                    <Link to='/blog'><button className='bg-orange-300 w-24 py-3 rounded text-xl font-semibold text-white'>Blog</button></Link>
+                    <Link to='/'><button className='mx-5 bg-orange-400 w-24 py-3 rounded text-xl font-semibold text-white'>Home</button></Link>
+                    <Link to='/blog'><button className='bg-orange-400 w-24 py-3 rounded text-xl font-semibold text-white'>Blog</button></Link>
                 </div>
             </div>
-            <Link><button className='bg-orange-300 w-32 p-3 rounded text-xl font-semibold text-white flex items-center gap-2 mr-8'><ArrowRightOnRectangleIcon className="h-6 w-7 text-white" /> Login</button></Link>
+            <Link to="/login"><button className='bg-orange-400 w-32 p-3 rounded text-xl font-semibold text-white flex items-center gap-2 mr-8'><ArrowRightOnRectangleIcon className="h-6 w-7 text-white" /> Login</button></Link>
         </div>
     );
 };
