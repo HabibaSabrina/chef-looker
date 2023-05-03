@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import RecipeDetails from './RecipeDetails';
 
 const ChefRecipe = () => {
     const chefData = useLoaderData();
     const { id, chefPicture, chefName, experience, likes, bio, recipesNum} = chefData
-    console.log(chefData)
     const chefId = useParams()
-    const [recipe, setRecipes] = useState([])
+    const [recipes, setRecipes] = useState([])
     useEffect(() =>{
         fetch('http://localhost:5000/recipe')
         .then(res => res.json())
         .then(data => setRecipes(data))
     },[])
-    const see = recipe.filter(r => r.chef_id == chefId.id)
-    console.log(see)
+    const chefRecipes = recipes.filter(r => r.chef_id == chefId.id)
     return (
         <div>
             <div className='flex items-center gap-10 mx-32 my-10'>
@@ -33,6 +32,18 @@ const ChefRecipe = () => {
                     </div>
 
                 </div>
+            </div>
+            <div className='bg-orange-300 px-32 py-20 my-28'>
+                <div className='flex items-center justify-center gap-2 mb-10'>
+                <p className='text-4xl font-bold '>{chefName}'s Recipes</p>
+                <img className='w-24' src="/recipe.png" alt="" />
+                </div>
+            <div className=' grid grid-cols-2 gap-10'>
+                
+                {
+                    chefRecipes.map(recipe => <RecipeDetails key={recipe.rid} recipe={recipe}></RecipeDetails>)
+                }
+            </div>
             </div>
         </div>
     );
