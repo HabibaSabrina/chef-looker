@@ -11,11 +11,8 @@
 * lazy loader and react pdf maker 
 * loader
 * useParam(), useState(), useEffect()
-* creating dynamic data and fetching the data from json 
-* Dynamic data is used from json file
-* Dynamic routing
+* Dynamic data is used from server side
 * Error page 404 when the route is unknown
-
 * Used Tailwind css framework
 
 ## Firebase Live Website Link
