@@ -10,7 +10,7 @@ const ChefInfo = ({ chef }) => {
                 <h1 className='text-2xl font-bold'>{chefName}</h1>
                 <p className='text-xl my-3'>Years of experience: {experience}</p>
                 <p className='mb-3'>Likes: {likes}</p>
-                <Link to={`/chef/${id}`}><button className='bg-gradient-to-r from-orange-600 to-orange-300 p-3 rounded text-white font-semibold'>View Recipes Button</button></Link>
+                <Link to={`/chef/${id}`}><button className='bg-orange-400 p-3 rounded text-white font-semibold'>View Recipes</button></Link>
             </div>
         </div>
     );
