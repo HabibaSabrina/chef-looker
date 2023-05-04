@@ -4,7 +4,7 @@ import { FaArrowRight, FaTwitter, FaFacebook, FaInstagram, FaGoogle } from 'reac
 const Footer = () => {
     return (
         <div>
-            <div className='bg-black text-white md:flex gap-36 justify-center items-center py-10 max-sm:p-5'>
+            <div className='bg-black text-white md:flex gap-36 justify-center items-center mt-20 py-10 max-sm:p-5'>
                 <div className='grid grid-cols-2 gap-5'>
                     <img className='w-28' src="/footer/f1.jpg" alt="" />
                     <img className='w-28' src="/footer/f2.jpg" alt="" />

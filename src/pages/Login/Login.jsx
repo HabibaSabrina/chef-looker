@@ -59,7 +59,7 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                setError(error.message)
+                setError('Email or Password is incorrect')
             })
     }
     return (
