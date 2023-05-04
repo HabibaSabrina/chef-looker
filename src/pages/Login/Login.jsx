@@ -2,15 +2,16 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 
 const Login = () => {
-    const { signIn, googleSignIn } = useContext(AuthContext)
+    const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
     const provider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
@@ -18,7 +19,20 @@ const Login = () => {
         googleSignIn(provider)
             .then(result => {
                 const loggedInUser = result.user;
-                console.log(loggedInUser);
+                navigate(from, { replace: true })
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+    }
+    const handleGithubSignIn = () =>{
+        githubSignIn(githubProvider)
+            .then(result => {
+                const loggedInUser = result.user;
+                navigate(from, { replace: true })
+
             })
             .catch(error => {
                 console.log(error);
@@ -62,7 +76,7 @@ const Login = () => {
                     <br />
                     <button className='bg-orange-400 w-64 rounded-full p-3 text-xl text-white font-semibold hover:bg-orange-500 mt-10'>Login</button>
                     <button onClick={handleGoogleSignIn} className='mx-auto bg-orange-400 w-64 rounded-full p-3 text-xl text-white font-semibold hover:bg-orange-500 mt-10 flex items-center gap-3 justify-center'><FaGoogle></FaGoogle><span>Sign in with Google</span></button>
-                    <button className='mx-auto bg-orange-400 w-64 rounded-full p-3 text-xl text-white font-semibold hover:bg-orange-500 mt-10 flex items-center gap-3 justify-center'><FaGithub></FaGithub><span>Sign in with Github</span></button>
+                    <button onClick={handleGithubSignIn} className='mx-auto bg-orange-400 w-64 rounded-full p-3 text-xl text-white font-semibold hover:bg-orange-500 mt-10 flex items-center gap-3 justify-center'><FaGithub></FaGithub><span>Sign in with Github</span></button>
 
                     <p className='my-5'>Don't Have an Account? Please <Link to="/register"><span className='text-orange-700 font-semibold'>Register</span></Link></p>
                 </div>

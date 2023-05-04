@@ -20,7 +20,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
         {
             path:'/',
             element:<Home></Home>,
-            loader: () => fetch('http://localhost:5000/chef')
+            loader: () => fetch('https://chef-looker-server-habibasabrina.vercel.app/chef')
         },
         {
             path:"/blog",
@@ -29,7 +29,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
         {
             path:'chef/:id',
             element:<PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/chef/${params.id}`)
+            loader: ({params}) => fetch(`https://chef-looker-server-habibasabrina.vercel.app/chef/${params.id}`)
         },
         {
             path:'/login',
