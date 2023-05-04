@@ -15,8 +15,8 @@ const Header = () => {
         })
     }
     return (
-        <div className='flex justify-between items-center mx-24 mt-10'>
-            <div className='flex gap-16 items-center'>
+        <div className='md:flex justify-between items-center md:mx-24 md:mt-10'>
+            <div className='md:flex gap-16 items-center'>
                 <div className='flex items-center'>
                     <img className='w-36' src="/logo.png" alt="" />
                     <h1 className='text-3xl font-bold -m-8'>Chef Looker</h1>
@@ -26,13 +26,13 @@ const Header = () => {
                     <ActiveLink to='/blog'><button className='bg-orange-400 w-24 py-3 rounded text-xl  '>Blog</button></ActiveLink>
                 </div>
             </div>
-            <div className='flex gap-5'>
+            <div className='md:flex gap-5'>
                 {
-                    user && <img className='w-12 rounded-full' src={user.photoURL} alt="" />
+                    user && <img className='max-sm:ml-5 max-sm:my-5 w-12 rounded-full' src={user.photoURL} alt="" />
 
                 }
             {
-                user ? <button onClick={handleLogOut} className='bg-orange-400 w-36 p-3 rounded text-xl font-semibold text-white flex items-center gap-2 mr-8'><ArrowLeftOnRectangleIcon className="h-6 w-7 text-white" /> Log Out</button> : <ActiveLink to="/login"><button className='bg-orange-400 w-36 p-3 rounded text-xl font-semibold flex items-center gap-2 mr-8'><ArrowRightOnRectangleIcon className="h-6 w-7 text-white" /> Login</button></ActiveLink>
+                user ? <button onClick={handleLogOut} className='bg-orange-400 w-36 p-3 rounded text-xl font-semibold text-white flex items-center gap-2 md:mr-8 max-sm:ml-5 max-sm:my-5'><ArrowLeftOnRectangleIcon className="h-6 w-7 text-white" /> Log Out</button> : <ActiveLink to="/login"><button className='bg-orange-400 w-36 p-3 rounded text-xl font-semibold flex items-center gap-2 md:mr-8 max-sm:ml-5 max-sm:my-5'><ArrowRightOnRectangleIcon className="h-6 w-7 text-white" /> Login</button></ActiveLink>
             }
             </div>
         </div>

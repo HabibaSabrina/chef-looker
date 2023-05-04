@@ -4,7 +4,7 @@ import { FaArrowRight, FaTwitter, FaFacebook, FaInstagram, FaGoogle } from 'reac
 const Footer = () => {
     return (
         <div>
-            <div className='bg-black text-white flex gap-36 justify-center items-center py-10'>
+            <div className='bg-black text-white md:flex gap-36 justify-center items-center py-10 max-sm:p-5'>
                 <div className='grid grid-cols-2 gap-5'>
                     <img className='w-28' src="/footer/f1.jpg" alt="" />
                     <img className='w-28' src="/footer/f2.jpg" alt="" />
@@ -28,11 +28,11 @@ const Footer = () => {
                     <h1 className='text-2xl font-semibold my-5'>About Us</h1>
                     <p className='leading-7 w-80'>This website is all about bangladeshi chefs and bangladeshi cuisine recipes. You can find different types of bangladeshi cuisine recipes here. Thank you for visiting us.</p>
                     <input className='my-5 rounded border-2 bordeer-white bg-black text-white focus:text-white p-3 w-72 h-10' type="email" name="" placeholder='Your Email' id="" />
-                    <button className='bg-orange-600 p-3 border-2 border-orange-600 rounded ml-5'><FaArrowRight></FaArrowRight></button>
+                    <button className='bg-orange-600 p-3 border-2 border-orange-600 rounded md:ml-5'><FaArrowRight></FaArrowRight></button>
                 </div>
             </div>
-            <div className='bg-black text-white border-t-2'>
-            <div className='flex items-center justify-between mx-36'>
+            <div className='bg-black text-white border-t-2 max-sm:p-5'>
+            <div className='md:flex items-center justify-between md:mx-36'>
                 <p className='font-semibold'>Copyright © 2014-2023. All rights reserved</p>
                 <div className='flex items-center'>
                     <img className='w-24' src="/logo.png" alt="" />
