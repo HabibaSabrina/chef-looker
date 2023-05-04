@@ -32,7 +32,7 @@ const Header = () => {
 
                 }
             {
-                user ? <button onClick={handleLogOut} className='bg-orange-400 w-36 p-3 rounded text-xl font-semibold text-white flex items-center gap-2 mr-8'><ArrowLeftOnRectangleIcon className="h-6 w-7 text-white" /> Log Out</button> : <Link to="/login"><button className='bg-orange-400 w-36 p-3 rounded text-xl font-semibold text-white flex items-center gap-2 mr-8'><ArrowRightOnRectangleIcon className="h-6 w-7 text-white" /> Login</button></Link>
+                user ? <button onClick={handleLogOut} className='bg-orange-400 w-36 p-3 rounded text-xl font-semibold text-white flex items-center gap-2 mr-8'><ArrowLeftOnRectangleIcon className="h-6 w-7 text-white" /> Log Out</button> : <ActiveLink to="/login"><button className='bg-orange-400 w-36 p-3 rounded text-xl font-semibold flex items-center gap-2 mr-8'><ArrowRightOnRectangleIcon className="h-6 w-7 text-white" /> Login</button></ActiveLink>
             }
             </div>
         </div>
