@@ -55,10 +55,10 @@ const Login = () => {
             <form onSubmit={handleLogin}>
                 <div className='text-center mt-10'>
                     <p className='font-semibold'>Email</p>
-                    <input className='text-center border-b-2 focus:outline-0 focus:text-center border-orange-300 mt-5 w-80' type="email" name="email" />
+                    <input className='text-center border-b-2 focus:outline-0 focus:text-center border-orange-300 mt-5 w-80' type="email" name="email" required/>
                     <br />
                     <p className='font-semibold mt-10'>Password</p>
-                    <input className='text-center border-b-2 focus:outline-0 focus:text-center border-orange-300 mt-5 w-80' type="password" name="password" />
+                    <input className='text-center border-b-2 focus:outline-0 focus:text-center border-orange-300 mt-5 w-80' type="password" name="password" required/>
                     <br />
                     <button className='bg-orange-400 w-64 rounded-full p-3 text-xl text-white font-semibold hover:bg-orange-500 mt-10'>Login</button>
                     <button onClick={handleGoogleSignIn} className='mx-auto bg-orange-400 w-64 rounded-full p-3 text-xl text-white font-semibold hover:bg-orange-500 mt-10 flex items-center gap-3 justify-center'><FaGoogle></FaGoogle><span>Sign in with Google</span></button>
