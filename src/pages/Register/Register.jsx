@@ -27,18 +27,20 @@ const Register = () => {
         createUser(email, password)
         .then(result =>{
             const createdUser = result.user;
+            console.log(createdUser)
             setError('')
             event.target.reset()
             setSuccess('user has created successfully')
-            updateUserData(result.user, photo)
+            updateUserData(result.user, photo, name)
         })
         .catch(error =>{
             setError(error.message)
             setSuccess('')
         })
-        const updateUserData = (user, photo) =>{
+        const updateUserData = (user, photo, name) =>{
             updateProfile(user, {
-                photoURL: photo
+                photoURL: photo,
+                displayName: name
               })
               .then(() => {
                 console.log("user name updated")

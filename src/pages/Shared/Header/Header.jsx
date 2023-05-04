@@ -28,7 +28,10 @@ const Header = () => {
             </div>
             <div className='md:flex gap-5'>
                 {
-                    user && <img className='max-sm:ml-5 max-sm:my-5 w-12 rounded-full' src={user.photoURL} alt="" />
+                    user && <div className='flex items-center'>
+                        <p className='-ml-8 absolute text-transparent hover:text-orange-600 font-semibold'>{user.displayName}</p>
+                        <img className=' max-sm:ml-5 max-sm:my-5 w-12 rounded-full' src={user.photoURL} alt="" />
+                    </div>
 
                 }
             {
