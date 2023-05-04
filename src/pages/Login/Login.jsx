@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
@@ -8,6 +8,8 @@ import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContext)
+    const [error, setError] = useState('')
+    const [success, setSuccess] = useState('')
     const provider = new GoogleAuthProvider()
     const navigate = useNavigate()
     const location = useLocation()
@@ -28,15 +30,22 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+        setError('')
+        setSuccess('')
+        if (password.length < 6) {
+            setError('Password must be 6 characters');
+            return
+        }
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user
-                console.log(loggedUser)
+                setSuccess('login successful')
+                setError('')
+                form.reset();
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error)
+                setError(error.message)
             })
     }
     return (
@@ -58,6 +67,8 @@ const Login = () => {
                     <p className='my-5'>Don't Have an Account? Please <Link to="/register"><span className='text-orange-700 font-semibold'>Register</span></Link></p>
                 </div>
             </form>
+            <p className='text-center text-red-500 font-semibold'>{error}</p>
+            <p className='text-center text-green-500 font-semibold'>{success}</p>
         </div>
     );
 };
