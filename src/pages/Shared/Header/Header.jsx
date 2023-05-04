@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRightOnRectangleIcon, ArrowLeftOnRectangleIcon } from '@heroicons/react/24/solid'
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -21,8 +22,8 @@ const Header = () => {
                     <h1 className='text-3xl font-bold -m-8'>Chef Looker</h1>
                 </div>
                 <div>
-                    <Link to='/'><button className='mx-5 bg-orange-400 w-24 py-3 rounded text-xl font-semibold text-white'>Home</button></Link>
-                    <Link to='/blog'><button className='bg-orange-400 w-24 py-3 rounded text-xl font-semibold text-white'>Blog</button></Link>
+                    <ActiveLink to='/'><button className='mx-5 bg-orange-400 w-24 py-3 rounded text-xl '>Home</button></ActiveLink>
+                    <ActiveLink to='/blog'><button className='bg-orange-400 w-24 py-3 rounded text-xl  '>Blog</button></ActiveLink>
                 </div>
             </div>
             <div className='flex gap-5'>
