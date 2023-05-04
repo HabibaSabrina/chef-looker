@@ -11,12 +11,13 @@ const Register = () => {
         event.preventDefault();
         setSuccess('')
         setError('')
+        // getting data from registration form
         const form = event.target;
         const name = form.name.value;
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        
+        // validation
         if (password.length < 6) {
             setError('Please add at least 6 characters in your password')
             return;
@@ -37,6 +38,7 @@ const Register = () => {
             setError(error.message)
             setSuccess('')
         })
+        // setting user info data
         const updateUserData = (user, photo, name) =>{
             updateProfile(user, {
                 photoURL: photo,

@@ -6,7 +6,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext) //getting logged user data
     const handleLogOut = () =>{
         logOut()
         .then()
