@@ -22,8 +22,8 @@ const Register = () => {
             setError('Please add at least 6 characters in your password')
             return;
         }
-        else if(email =='' || password==''){
-            setError('Please fill up both email and password field')
+        else if(email.length == 0 || password.length == 0){
+            setError('')
         }
         createUser(email, password)
         .then(result =>{
@@ -35,7 +35,7 @@ const Register = () => {
             updateUserData(result.user, photo, name)
         })
         .catch(error =>{
-            setError(error.message)
+            setError('Please fill up both email and password field')
             setSuccess('')
         })
         // setting user info data

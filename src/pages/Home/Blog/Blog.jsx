@@ -12,7 +12,7 @@ const Blog = () => {
                 {({ toPdf }) => <button onClick={toPdf} className='text-white border-2 border-white flex items-center gap-3 text-xl p-3 rounded hover:bg-orange-600 ml-auto'><FaFilePdf></FaFilePdf> Convert to pdf</button>}
             </Pdf>
             <div ref={ref}>
-            <h1 className='text-center text-5xl font-bold mb-20 text-white'>Welcome to the Blog</h1>
+            <h1 className='text-center text-5xl font-bold mb-20 '>Welcome to the Blog</h1>
                 <div className='bg-white p-8 my-10 rounded-xl'>
                     <p className='text-2xl font-semibold mb-5'>1. Difference between uncontrolled and controlled components</p>
                     <p><b>Controlled</b> components in React are those whose state and behavior are managed by the parent component. To modify their state and behavior, these components rely on props that are given down from the parent component. Components that control their own state on an internal level are referred to as <b>uncontrolled</b> components.</p>
