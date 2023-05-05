@@ -21,7 +21,6 @@ const Header = () => {
     const removeName = () =>{
         setShowName(false)
     }
-    console.log(showName)
     return (
         <div className='md:flex justify-between items-center md:mx-24 md:mt-10'>
             <div className='md:flex gap-16 items-center'>
